@@ -83,8 +83,7 @@ void loop() {
   }
   
   husky.request();
-  if(!husky.available()); 
-  else{
+  if(husky.available()){
     HUSKYLENSResult result = husky.read();
     pidError_x = 90-map(result.xCenter - 160, -160,160, -90,90);
     pidError_y = 90-map(result.yCenter - 120, -120,120, -90,90);
