@@ -1,7 +1,6 @@
 #include <Arduino.h>
 #include <Servo.h>//HUSKYLENS green line >> Pin 10; blue line >> Pin 11//HUSKYLENS green line >> Pin 10; blue line >> Pin 11plat
 #include <HUSKYLENS.h>
-#include <PIDLoop.h>
 
 /*macros & constants*/
 #define bootstrapDelay delay(5000);
@@ -16,8 +15,6 @@ const uint8_t tilt_servo_pin = D0;
 Servo servo_ctl = Servo();
 HUSKYLENS husky;
 EspSoftwareSerial::UART huskySerial;
-PIDLoop pidLoop_x(90,0,0,false);
-PIDLoop pidLoop_y(90,0,0,false);
 int16_t pidError_x = 160;
 int16_t pidError_y = 120;
 int32_t pidOutput_x = 0;
